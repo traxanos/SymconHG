@@ -1,0 +1,11 @@
+{
+  "id": "{928B2CDB-09D5-42B4-A738-7C77CC6FB96F}",
+  "name": "HG",
+  "type": 1,
+  "vendor": "Homegear",
+  "aliases": [ "Homegear Socket" ],
+  "parentRequirements": [ "{A151ECE9-D733-4FB9-AA15-7F7DD10C58AF}" ],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "HG"
+}

@@ -1,0 +1,26 @@
+{
+  "elements": [
+    { "type": "Label", "label": "Gebe das Homematic Socket an" },
+    { "name": "SocketID", "type": "SelectInstance", "caption": "Homematic Socket" },
+    { "type": "Label", "label": "Hier werden für jede Familie ein Ordner angelegt. In diesen Familienordnern werden dann die Geräte als Ordner angelegt. Darin Enthalten sind die Kanäle." },
+    { "name": "CategoryID", "type": "SelectCategory", "caption": "Kategorie" },
+    { "type": "Label", "label": "Hiermit kannst du weitere Statusinformationen abgleichen lassen, wie Firmware und Gerätetyp. 0 = Manuell. So einmal an Tag sollte reichen. 86400 sek. Es werden auf dem MAINTANCE Kannal weitere Variablen angelegt." },
+    { "type": "IntervalBox", "name": "SyncStatusInterval", "caption": "Stunden" },
+    { "type": "Label", "label": "Hier kannst du Kanäle (kommasepariert) vom Ablgleich auschschließen. Folgende Schreibweisen sind erlaubt:" },
+    { "type": "Label", "label": "SERIAL (Seriennummer - z.B. LEQ00000001) | SERIAL:X (Serielnummer inkl. Kannalnummer - z.B. LEQ0000000:1) | TYPE (Geräteart - z.B. HM-TC-IT-WM-W-EU) | CHANNEL_NAME (Kannelname - z.B. MAINTENANCE) SERIAL:CHANNEL_NAME (z.B. LEQ0000001:THERMALCONTROL_TRANSMIT)" },
+    { "type": "ValidationTextBox", "name": "Blacklist", "caption": "Blacklist" },
+
+  ],
+  "actions": [
+    { "type": "Button", "label": "Sync devices", "onClick": "HG_SyncDevices($id); echo 'OK';" },
+    { "type": "Button", "label": "Sync addition status", "onClick": "HG_SyncStatus($id); echo 'OK';" }
+  ],
+  "status": [
+    { "code": 101, "icon": "inactive", "caption": "Instanz wird erstellt" },
+    { "code": 102, "icon": "active", "caption": "Instanz ist aktiv" },
+    { "code": 103, "icon": "inactive", "caption": "Instanz wird gelöscht" },
+    { "code": 104, "icon": "inactive", "caption": "Instanz ist inaktiv" },
+    { "code": 201, "icon": "error", "caption": "Instanz konnte keine Verbidnung aufbauen" },
+    { "code": 202, "icon": "error", "caption": "Instanz hat einen unbekannten Fehler erhalten" }
+  ]
+}
